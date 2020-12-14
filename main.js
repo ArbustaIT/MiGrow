@@ -9,9 +9,9 @@ $(() => {
 
             nowst = nowst.replace('arb-id/', '')
 
-            app.getFile('page/grow.htm')
+            getPage('page/grow.htm')
                 .then((r) => {
-                    $('#appParent').append('<div id="grow" class="page">' + r + '</div>');
+                    $('body').html('<div id="grow" class="page">' + r + '</div>');
                     setTimeout(() => { $('#loading').hide('fade', 150) }, 150);
                 })
                 .catch(() => {
@@ -19,9 +19,9 @@ $(() => {
                 })
         } else {
             //mostrar un mensaje de 404
-            app.getFile('page/land.htm')
+            getPage('page/land.htm')
                 .then((r) => {
-                    $('#appParent').append('<div id="land" class="page">' + r + '</div>');
+                    $('body').html('<div id="land" class="page">' + r + '</div>');
                     setTimeout(() => { $('#loading').hide('fade', 150) }, 150);
                 })
                 .catch(() => {
@@ -31,9 +31,9 @@ $(() => {
 
     } else {
         //Ir a la pagina principal
-        app.getFile('page/land.htm')
+        getPage('page/land.htm')
             .then((r) => {
-                $('#appParent').append('<div id="land" class="page">' + r + '</div>');
+                $('body').html('<div id="land" class="page">' + r + '</div>');
                 setTimeout(() => { $('#loading').hide('fade', 150) }, 150);
             })
             .catch(() => {
@@ -45,7 +45,7 @@ $(() => {
 
 
 // obteniendo pagina
-app.getPage = (x) => {
+getPage = (x) => {
     return new Promise((resolve, regect) => {
         fetch(x, { cache: 'no-cache' }).then(Response => {
             Response.text().then(text => {
