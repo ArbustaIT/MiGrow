@@ -5,23 +5,27 @@ $(() => {
         nowst = atob(nowst.replace('?', ''))
 
         if (nowst.includes('arb-id/')) {
-            //Pedir los datos y abrir la pagina 
+            //Pedir los datos y abrir la pagina
+            getInfo(nowst.replace('arb-id/', '')).then((dd) => {
+                console.log(dd)
+                window.localStorage.setItem('info', JSON.stringify(dd))
+                window.localStorage.setItem('user', nowst.replace('arb-id/', ''))
+                getPage('page/grow.htm')
+                    .then((r) => {
+                        $('body').html('<div id="grow" class="page">' + r + '</div>');
+                        setTimeout(() => { $('#loading').hide('fade', 150) }, 150);
+                    })
+                    .catch(() => {
+                        console.log('Error cargando pagina')
+                    })
 
-            getInfo(btoa(nowst.replace('arb-id/', '').replace('@arbusta.net', ''))).then((r) => {
-               console.log(r)
+
             })
                 .catch(() => {
                     console.log('Error obteniendo info')
                 })
 
-            getPage('page/grow.htm')
-                .then((r) => {
-                    $('body').html('<div id="grow" class="page">' + r + '</div>');
-                    setTimeout(() => { $('#loading').hide('fade', 150) }, 150);
-                })
-                .catch(() => {
-                    console.log('Error cargando pagina')
-                })
+
         } else {
             //mostrar un mensaje de 404
             getPage('page/land.htm')
