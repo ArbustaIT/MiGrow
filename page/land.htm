@@ -1,1 +1,14 @@
 Landing MiGrow
+
+<button onclick="nana()">Ok</button>
+
+<script>
+nana = () => {
+    getInfo('Perez Gonzalez, Carlos Daniel').then((r) => {
+               console.log(r)
+            })
+                .catch(() => {
+                    console.log('Error obteniendo info')
+                })
+}
+</script>

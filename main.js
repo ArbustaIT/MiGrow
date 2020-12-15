@@ -7,7 +7,12 @@ $(() => {
         if (nowst.includes('arb-id/')) {
             //Pedir los datos y abrir la pagina 
 
-            nowst = nowst.replace('arb-id/', '')
+            getInfo(btoa(nowst.replace('arb-id/', '').replace('@arbusta.net', ''))).then((r) => {
+               console.log(r)
+            })
+                .catch(() => {
+                    console.log('Error obteniendo info')
+                })
 
             getPage('page/grow.htm')
                 .then((r) => {
@@ -15,7 +20,7 @@ $(() => {
                     setTimeout(() => { $('#loading').hide('fade', 150) }, 150);
                 })
                 .catch(() => {
-                    console.log('Intentalo otra vez 😐')
+                    console.log('Error cargando pagina')
                 })
         } else {
             //mostrar un mensaje de 404
@@ -25,7 +30,7 @@ $(() => {
                     setTimeout(() => { $('#loading').hide('fade', 150) }, 150);
                 })
                 .catch(() => {
-                    console.log('Intentalo otra vez 😐')
+                    console.log('Error cargando pagina')
                 })
         }
 
@@ -37,7 +42,7 @@ $(() => {
                 setTimeout(() => { $('#loading').hide('fade', 150) }, 150);
             })
             .catch(() => {
-                console.log('Intentalo otra vez 😐')
+                console.log('Error cargando pagina')
             })
 
     }
@@ -56,3 +61,20 @@ getPage = (x) => {
         })
     })
 }
+
+//Obteniendo json del user
+getInfo = (x) => {
+    return new Promise((resolve, regect) => {
+        fetch('https://script.google.com/a/macros/arbusta.net/s/AKfycbwVeOng24GwZZUuC_Ef6tPJ0HpHlBimimkOhisAxQXMpmVYDsE0Wu3kIg/exec?' + x, { cache: 'no-cache' }).then(Response => {
+            Response.json().then(json => {
+                resolve(json)
+            })
+        }).catch(err => {
+            regect(err)
+        })
+    })
+}
+
+
+
+//https://script.google.com/a/macros/arbusta.net/s/AKfycbwVeOng24GwZZUuC_Ef6tPJ0HpHlBimimkOhisAxQXMpmVYDsE0Wu3kIg/exec?lalala=kmlkm
