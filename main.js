@@ -28,13 +28,13 @@ $(() => {
 
         } else {
             //mostrar un mensaje de 404
-            getPage('page/land.htm')
+            getPage('page/404.htm')
                 .then((r) => {
-                    $('body').html('<div id="land" class="page">' + r + '</div>');
+                    $('body').html('<div id="error" class="page">' + r + '</div>');
                     setTimeout(() => { $('#loading').hide('fade', 150) }, 150);
                 })
                 .catch(() => {
-                    console.log('Error cargando pagina')
+                    console.log('Error cargando los datos :(')
                 })
         }
 
