@@ -4,12 +4,12 @@ $(() => {
     if (nowst) {
         nowst = atob(nowst.replace('?', ''))
 
-        if (nowst.includes('arb-id/')) {
+        if (nowst.includes('arbusta.net')||nowst.includes('test')) {
             //Pedir los datos y abrir la pagina
-            getInfo(nowst.replace('arb-id/', '')).then((dd) => {
+            getInfo(nowst).then((dd) => {
                 console.log(dd)
                 window.localStorage.setItem('info', JSON.stringify(dd))
-                window.localStorage.setItem('user', nowst.replace('arb-id/', ''))
+                window.localStorage.setItem('user', dd.name)
                 getPage('page/grow.htm')
                     .then((r) => {
                         $('body').html('<div id="grow" class="page">' + r + '</div>');
