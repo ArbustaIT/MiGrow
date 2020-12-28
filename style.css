@@ -1,7 +1,8 @@
 hr{
     width: 100px;
-    height: 10px;
+    height: 8px;
     background-image: url(/lib/img/Fondo_b.jpg);
     border: none;
-    background-position-y: 300px;
+    background-position-y: 300px ;
+    margin: 0;
 }
