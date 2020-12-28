@@ -2,20 +2,22 @@
 <html>
 
 <head>
-
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
 </head>
 
 <body>
 
     <button onclick="sendmail()">Send mail</button>
 
-    <!-- migrow pass chfelvcfcmbyrpjt -->
+
 <script>
-sendmail = ()=> {
+
+sendmail = (x)=> {
         Email.send({
-            Host: "smtp.gmail.com",
-            Username: "migrow@arbusta.net",
-            Password: "chfelvcfcmbyrpjt",
+            //Host: "smtp.gmail.com",
+            //Username: "migrow@arbusta.net",
+            //Password: "chfelvcfcmbyrpjt",
+            SecureToken : "C973D7AD-F097-4B95-91F4-40ABC5567812",
             To: 'carlos.perez@arbusta.net',
             From: "migrow@arbusta.net",
             Subject: "TU 2020 EN ARBUSTA",
@@ -24,6 +26,8 @@ sendmail = ()=> {
             message => console.log("mail sent successfully", message)
         );
     };
+
+    //token ec551810-4c3a-4472-bbba-37e8ba7098ff
 </script>
 
 
@@ -31,8 +35,10 @@ sendmail = ()=> {
 
 
 
-    <script src="https://smtpjs.com/v3/smtp.js">
-    </script>
+
+
+   
+    
 </body>
 <script>
      
