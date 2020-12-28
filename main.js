@@ -8,12 +8,11 @@ $(() => {
             //Pedir los datos y abrir la pagina
             getInfo(nowst).then((dd) => {
                 console.log(dd)
-                window.localStorage.setItem('info', JSON.stringify(dd))
-                window.localStorage.setItem('user', dd.name)
+                window.sessionStorage.setItem('info', JSON.stringify(dd))
+                window.sessionStorage.setItem('user', dd.name)
                 getPage('page/grow.htm')
                     .then((r) => {
                         $('body').html('<div id="grow" class="page">' + r + '</div>');
-                        setTimeout(() => { $('#loading').hide('fade', 150) }, 150);
                     })
                     .catch(() => {
                         console.log('Error cargando pagina')
@@ -31,7 +30,6 @@ $(() => {
             getPage('page/404.htm')
                 .then((r) => {
                     $('body').html('<div id="error" class="page">' + r + '</div>');
-                    setTimeout(() => { $('#loading').hide('fade', 150) }, 150);
                 })
                 .catch(() => {
                     console.log('Error cargando los datos :(')
@@ -43,7 +41,6 @@ $(() => {
         getPage('page/land.htm')
             .then((r) => {
                 $('body').html('<div id="land" class="page">' + r + '</div>');
-                setTimeout(() => { $('#loading').hide('fade', 150) }, 150);
             })
             .catch(() => {
                 console.log('Error cargando pagina')
