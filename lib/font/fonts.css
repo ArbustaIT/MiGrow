@@ -18,3 +18,13 @@
     font-family: rBlackItalic;
     src: url('Rubik-BlackItalic.ttf')
 }
+
+@font-face {
+    font-family: rLight;
+    src: url('Rubik-Light.ttf')
+}
+
+@font-face {
+    font-family: rLightItalic;
+    src: url('Rubik-LightItalic.ttf')
+}
