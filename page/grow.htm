@@ -1,11 +1,53 @@
-<div class="cue">
-    <h1 id="ti"></h1>
+<img src="/lib/img/2020_Arbusta_web.png" class="png1">
+<img src="/lib/img/Fondo.jpg" class="bacc">
+<h1 id="ti"></h1>
+
+<div class="conte">
+
 </div>
 
-<script>
-    $(()=>{
-       var usr = window.sessionStorage.getItem('user'), info = window.sessionStorage.getItem('info');
 
-       $('#ti').html('Grow de ' + usr )
+
+<script>
+    $(() => {
+        var usr = window.sessionStorage.getItem('user'), info = window.sessionStorage.getItem('info');
+
+        $('#ti').html((usr.split(', ')[1].includes(' ')) ? usr.split(', ')[1].split(' ')[0] : usr.split(', ')[1])
     })
 </script>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: "rubik", Arial, Helvetica, sans-serif;
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+    }
+
+    .bacc {
+        position: absolute;
+        width: auto;
+        height: 100%;
+        right: 0;
+        top: 0;
+        z-index: -1;
+    }
+
+    .png1 {
+        margin-top: 200px;
+        max-width: 30vw;
+    }
+
+    .conte {
+        position: absolute;
+        width: 100vw;
+        min-height: 300px;
+        left: 0;
+    }
+</style>
