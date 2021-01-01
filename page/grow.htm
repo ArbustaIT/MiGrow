@@ -1,9 +1,121 @@
 <img src="/lib/img/2020_Arbusta_web.png" class="png1">
 <img src="/lib/img/Fondo.jpg" class="bacc">
-<h1 id="ti" style="text-align: center;"></h1>
+<h1 id="ti" style="text-align: center;margin-bottom: 8vw;"></h1>
 
 <div class="conte">
+    <div id="desafios" class="secc">
+        <div class="tx iz">
+            <h1>DESAFÍOS</h1>
+            <hr>
+            <p>Todo cambio -sea asumir un nuevo rol, pasar a una nueva tribu
+                o a un nuevo círculo, o pasar de PT a FT, promocionar, o tomar
+                una nueva responsabilidad implica salirse de la zona de
+                confort, animarse a crecer, a expandirse, a dar un paso más
+                hacia nuevas experiencias y construir nuevas miradas, ganar
+                nuevas habilidades técnicas e interpersonales, tomar coraje
+                para confiar y desafiarse.</p>
+        </div>
+        <div class="res der">
+            <div id="puesto">Cambiaste de puesto a <span class="resa">XX</span></div>
 
+            <div id="proya">Participaste en <span class="resa"></span>XX</span> proyectos</div>
+            <div id="proyb">
+                <ul>
+                    <li>proyecto1</li>
+                    <li>proyecto 2</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="espacios" class="secc">
+        <div class="res iz">
+            <h1>Participaste en <span class="resa" id="espanum">XX</span></h1>
+            <h2>ESPACIOS DE APRENDIZAJE</h2>
+            <div id="espal">
+                <ul>
+                    <li>Espacio 1</li>
+                    <li>espacio 2</li>
+                </ul>
+            </div>
+        </div>
+        <div class="tx iz">
+            <h1>Espacios de Aprendizaje</h1>
+            <hr>
+            <p>Más allá del aprendizaje en el desarrollo de las tareas de cada
+                persona, Arbusta, como un Entorno de Aprendizaje, pone a
+                disposición diferentes espacios para el desarrollo de nuevas
+                habilidades técnicas y socioemocionales. Responden a las
+                necesidades del crecimiento de Arbusta como empresa, sus
+                proyectos, su negocio, el desarrollo de su equipo y su talento. Algunos
+                de los ejemplos del 2020 son inglés, portugués, Automation, Python,
+                Ciberseguridad, Base de Datos y SQL, Selenium, Inteligencia
+                Emocional, Diseño, Liderazgo.
+                Esperamos que estés pudiendo aplicar las habilidades que adquiriste
+                en tu trabajo</p>
+        </div>
+    </div>
+
+    <div id="iniciativa" class="secc">
+        <div class="tx iz">
+            <h1>Participación en Iniciativas
+            </h1>
+            <hr>
+            <p>En Arbusta buscamos crecer siendo plenos/as, es decir
+                expandiéndonos en nuestra dimensión personal, emocional,
+                profesional. Por eso, proponemos y habilitamos espacios que
+                puedan contener y expandir intereses diversos, expandir nuestra
+                mirada, desarrollar nuevas habilidades en nosotros. Algunos
+                ejemplos son las Conversaciones que nos Conectan, las
+                Conversaciones que nos Inspiran, el Guild de Género, el Guild de
+                Sustentabilidad, el Guild de Motivación, Las Pausas Activas, los
+                Grupos Psicosociales</p>
+        </div>
+        <div class="res der">
+            <div id="inia">Celebramos tu participación en: <span class="resa big">XX</span></div>
+            <h2>INICIATIVAS</h2>
+            <div id="inib">
+                <ul>
+                    <li>proyecto1</li>
+                    <li>proyecto 2</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="formacion" class="secc">
+        <div class="res iz">
+            <h2>FORTALECISTE</h2>
+            <div class="fora">TU FORMACIÓN TÉCNICA EN:<span class="resa big">XX</span></div>
+            <h2>LUGARES</h2>
+            <h2>ESPACIOS DE APRENDIZAJE</h2>
+
+            <div id="forb">
+                <ul>
+                    <li>Espacio 1</li>
+                    <li>espacio 2</li>
+                </ul>
+            </div>
+        </div>
+        <div class="tx iz">
+            <h1>Formación más allá de Arbusta</h1>
+            <hr>
+            <p>Para develar talento, la mentalidad de crecimiento es clave. Y
+                sabemos que el/la protagonista de tu crecimiento sos vos. Arbusta
+                actúa como una plataforma de estímulo para eso. Todos los
+                conocimientos son valiosísimos para tu desarrollo, y también para tu
+                rol en Arbusta.</p>
+        </div>
+    </div>
+
+    <div id="clave" class="secc">
+        <img src="/lib/img/Arbusta-blanco-11.png">
+        <div>
+            <span class="resa gold">GRACIAS POR SER UNA PERSONA CLAVE</span><br>
+            EN EL GROW DE OTRAS PERSONAS EN ARBUSTA
+        </div>
+        <p>clave por esto</p>
+    </div>
 </div>
 
 
@@ -33,15 +145,14 @@
 
     .bacc {
         position: absolute;
-        width: auto;
-        height: 100%;
+        width: 61vw;
         right: 0;
         top: 0;
         z-index: -1;
     }
 
     .png1 {
-        margin-top: 200px;
+        margin-top: 4vw;
         max-width: 30vw;
     }
 
@@ -50,5 +161,73 @@
         width: 100vw;
         min-height: 300px;
         left: 0;
+    }
+
+    .resa {
+        color: blueviolet;
+    }
+
+    .resa.gold {
+        background-color: white;
+        color: rgb(190, 162, 1);
+        font-family: 'rBlack';
+    }
+
+    .der {
+        float: right;
+        margin-right: 6vw;
+    }
+
+    .iz {
+        float: left;
+        margin-left: 6vw;
+    }
+
+    .tx,
+    .res {
+        width: 38vw;
+    }
+
+    .res {
+        padding-top: 2vw;
+    }
+
+    .tx {
+        text-align: justify;
+    }
+
+    .secc {
+        width: 100vw;
+        left: 0;
+        margin-top: 4vw;
+    }
+
+
+    h1 {
+        font-size: 3vw;
+        font-family: 'rLightItalic';
+    }
+
+    hr {
+        height: .5vh;
+        width: 6vw;
+        margin-bottom: 2vh;
+    }
+
+
+
+    /* SECCIONES */
+    #clave {
+        height: 30vw;
+        background-image: url(/lib/img/Fondo_b.jpg);
+        background-size: cover;
+        text-align: center;
+    }
+
+    #clave img {
+        width: 10vw;
+        left: 45vw;
+        position: absolute;
+        bottom: 8vw;
     }
 </style>
