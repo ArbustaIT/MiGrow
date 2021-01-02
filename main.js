@@ -68,10 +68,10 @@ getInfo = (x) => {
 
     return xa = new Promise((resolve, regect) => {
 
-        if (window.sessionStorage.getItem('user') == x) {
+       if (window.sessionStorage.getItem('user') == x) {
             console.log('Local')
-            resolve(JSON.parse(window.sessionStorage.getItem('info')))
-        } else {
+           resolve(JSON.parse(window.sessionStorage.getItem('info')))
+      } else {
             console.log('Batabase')
             fetch('https://script.google.com/a/macros/arbusta.net/s/AKfycbwVeOng24GwZZUuC_Ef6tPJ0HpHlBimimkOhisAxQXMpmVYDsE0Wu3kIg/exec?' + x, { cache: 'no-cache' }).then(Response => {
                 Response.json().then(json => {

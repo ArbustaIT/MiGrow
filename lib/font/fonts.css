@@ -28,3 +28,12 @@
     font-family: rLightItalic;
     src: url('Rubik-LightItalic.ttf')
 }
+
+@font-face {
+    font-family: rMed;
+    src: url('Rubik-Medium.ttf')
+}
+@font-face {
+    font-family: rSemi;
+    src: url('Rubik-SemiBold.ttf')
+}
