@@ -125,11 +125,11 @@
 
 
 <script>
-    $(() => {
-        var usr = window.sessionStorage.getItem('user'), info = window.sessionStorage.getItem('info');
-
-        $('#ti').html((usr.split(', ')[1].includes(' ')) ? usr.split(', ')[1].split(' ')[0] : usr.split(', ')[1])
-    })
+     $(() => {
+        info = JSON.parse(window.sessionStorage.getItem('info'));
+console.log(info)
+        $('#ti').html((info.name.split(', ')[1].includes(' ')) ? info.name.split(', ')[1].split(' ')[0] : info.name.split(', ')[1])
+    }) 
 </script>
 
 <style>
