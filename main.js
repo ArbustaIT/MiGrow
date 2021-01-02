@@ -6,19 +6,22 @@ $(() => {
 
         if (nowst.includes('arbusta.net') || nowst.includes('test')) {
             //Pedir los datos y abrir la pagina
+            getPage('page/growla.htm')
+                .then((r) => {
+                    $('body').html(r);
+                })
+                .catch(() => {
+                    console.log('Error cargando pagina')
+                })
+
 
             getInfo(nowst).then((dd) => {
                 window.sessionStorage.setItem('info', JSON.stringify(dd))
                 window.sessionStorage.setItem('user', nowst)
-                getPage('page/grow.htm')
-                    .then((r) => {
-                        $('body').html('<div id="grow" class="page">' + r + '</div>');
-                    })
-                    .catch(() => {
-                        console.log('Error cargando pagina')
-                    })
-
-
+                setTimeout(() => {
+                    $('#infotext').hide()
+                    $('#nextbtn').show('fade', 300)
+                }, 700)
             })
                 .catch(() => {
                     console.log('Error obteniendo info')
@@ -68,10 +71,10 @@ getInfo = (x) => {
 
     return xa = new Promise((resolve, regect) => {
 
-       if (window.sessionStorage.getItem('user') == x) {
+        if (window.sessionStorage.getItem('user') == x) {
             console.log('Local')
-           resolve(JSON.parse(window.sessionStorage.getItem('info')))
-      } else {
+            resolve(JSON.parse(window.sessionStorage.getItem('info')))
+        } else {
             console.log('Batabase')
             fetch('https://script.google.com/a/macros/arbusta.net/s/AKfycbwVeOng24GwZZUuC_Ef6tPJ0HpHlBimimkOhisAxQXMpmVYDsE0Wu3kIg/exec?' + x, { cache: 'no-cache' }).then(Response => {
                 Response.json().then(json => {
@@ -84,8 +87,20 @@ getInfo = (x) => {
 
     })
 }
-
-
-
-
 //https://script.google.com/a/macros/arbusta.net/s/AKfycbwVeOng24GwZZUuC_Ef6tPJ0HpHlBimimkOhisAxQXMpmVYDsE0Wu3kIg/exec?lalala=kmlkm
+
+
+vergrow = () => {
+
+    getPage('page/grow.htm')
+        .then((r) => {
+            setTimeout(() => {
+                $('body').html('<div id="grow" class="page">' + r + '</div>');
+            }, 400)
+        })
+        .catch(() => {
+            console.log('Error cargando pagina')
+        })
+
+
+}
