@@ -1,6 +1,6 @@
 <img src="/lib/img/2020_Arbusta_web.png" class="png1">
 <img src="/lib/img/Fondo.jpg" class="bacc">
-<h1 id="ti" style="text-align: center;margin-bottom: 8vw;"></h1>
+<h1 id="ti" style="text-align: center;margin-bottom: 8vw; font-size: 2.3vw;"></h1>
 
 <div class="conte">
     <div id="desafios" class="secc">
@@ -72,7 +72,9 @@
                 Grupos Psicosociales</p>
         </div>
         <div class="res der">
-            <div id="inia">Celebramos tu participación en: <span class="resa big">XX</span></div>
+            <div id="inia">Celebramos tu participación en: <br>
+                <span class="resa big">XX</span>
+            </div>
             <h2>INICIATIVAS</h2>
             <div id="inib">
                 <ul>
@@ -86,7 +88,9 @@
     <div id="formacion" class="secc">
         <div class="res iz">
             <h2>FORTALECISTE</h2>
-            <div class="fora">TU FORMACIÓN TÉCNICA EN:<span class="resa big">XX</span></div>
+            <div class="fora">TU FORMACIÓN TÉCNICA EN: <br>
+                <span class="resa big">XX</span>
+            </div>
             <h2>LUGARES</h2>
             <h2>ESPACIOS DE APRENDIZAJE</h2>
 
@@ -98,7 +102,7 @@
             </div>
         </div>
         <div class="tx iz">
-            <h1>Formación más allá de Arbusta</h1>
+            <h1 style="font-size: 2.6vw;">Formación más allá de Arbusta</h1>
             <hr>
             <p>Para develar talento, la mentalidad de crecimiento es clave. Y
                 sabemos que el/la protagonista de tu crecimiento sos vos. Arbusta
@@ -164,7 +168,7 @@
     }
 
     .resa {
-        color: blueviolet;
+        color: #d5138a;
     }
 
     .resa.gold {
@@ -208,10 +212,18 @@
         font-family: 'rLightItalic';
     }
 
+    h2 {
+        font-size: 1.55vw;
+    }
+
     hr {
         height: .5vh;
         width: 6vw;
         margin-bottom: 2vh;
+    }
+
+    p {
+        font-size: 1.3vw;
     }
 
 
@@ -230,4 +242,24 @@
         position: absolute;
         bottom: 8vw;
     }
+
+
+
+    /* MOBILE */
+
+    @media only screen and (max-width: 750px) {
+        body {
+            /*     background-color: lightblue; */
+        }
+
+        .tx,
+        .res {
+            width: 100vw;
+            float: none;
+            margin-left: 4vw;
+            margin-right: 4vw;
+        }
+    }
 </style>
+
+<!-- ?dGVzdA== -->
