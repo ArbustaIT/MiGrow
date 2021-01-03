@@ -13,8 +13,8 @@
                 nuevas habilidades técnicas e interpersonales, tomar coraje para confiar y desafiarse.</p>
         </div>
         <div class="res der">
+            <div id="Full"></div>
             <div id="puesto"></div>
-
             <div id="proya"></div>
             <div id="proyb">
                 <ul> </ul>
@@ -121,6 +121,9 @@
             $('#desafios').show()
             if (info.puesto) {
                 $('#puesto').html('Cambiaste de puesto a <span class="resa"> ' + info.puesto + '.</span>')
+            }
+            if(info.paseft == 'Si'){
+                $('#Full').html('Pasaste a <span class="resa">Full Time!</span>')
             }
             if (info.proyectos) {
                 proynum = (info.proyectos.includes(", ")) ? info.proyectos.split(", ").length + " </span>proyectos:" : 1 + " </span>proyecto:";
@@ -299,13 +302,9 @@
         margin-top: 3.5vw;
     }
 
-    #puesto {
+    #puesto, #proya, #Full {
         font-size: 2vw;
 
-    }
-
-    #proya {
-        font-size: 2vw;
     }
 
     #espacios .res {
