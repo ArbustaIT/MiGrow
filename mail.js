@@ -51,7 +51,6 @@ sendIt = (x) => {
     inf = JSON.parse(window.sessionStorage.getItem('inf'));
     again = [];
 
-try{
       if (inf.length >= 1) {
         if (x == 'test') {
 
@@ -91,11 +90,6 @@ try{
             } */
         }
     }
-}catch(err){
-    console.error(err)
-}finally{
-    console.log(again)
-}
   
 }
 
