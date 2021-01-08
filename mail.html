@@ -6,13 +6,97 @@
     <script src="lib/js/jquery-ui.min.js"></script>
     <script src="https://smtpjs.com/v3/smtp.js"></script>
     <script src="mail.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="lib/font/fonts.css">
 </head>
 
-<body>
+<body onload="getdata()">
+    <img src="/lib/img/Fondo.jpg" class="back">
+    <div class="con">
+        <h1>ENVÍO</h1>
+        <h2>DE CORREO</h2>
+        <hr>
+        <h3 id="info">Cargando...</h3>
+        <div class="contro">
+            <button onclick="sendIt('prod')" style="color: #d41389;">
+                <div class="rippleJS"></div>Enviar Mails
+            </button>
+            <button onclick="sendIt('test')" style="background-color: #d41389; color:#fff">
+                <div class="rippleJS"></div>Mail Testeo
+            </button>
+        </div>
 
-    <button onclick="getMail()">Send mail</button>
+    </div>
 
 
+    <style>
+        .contro{
+            display: inline-flex;
+        }
+        button {
+            margin: 1vw;
+            padding: 1vw;
+            border: none;
+            font-size: 1vw;
+            border-radius: .2vw;
+            outline: none;
+            position: relative;
+            display: none;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .back {
+            position: absolute;
+            width: auto;
+            height: 100%;
+            right: 0;
+            top: 0;
+            z-index: -1;
+        }
+
+        .con {
+            text-align: center;
+
+        }
+
+        h1 {
+            font-size: 3vw;
+            color: #d41389;
+            font-family: rBlackItalic;
+        }
+
+        h2 {
+            font-size: 2.3vw;
+            font-family: rItalic;
+            color: #0f0f0f;
+        }
+
+        h3 {
+            font-size: 1.6vw;
+            font-family: rLightItalic;
+        }
+
+        hr {
+            margin-left: calc(50% - 3vw);
+            margin-top: 1vw;
+            margin-bottom: 1vw;
+            width: 6vw;
+            height: 0.4vw;
+        }
+    </style>
+    <script src="lib/js/ripple.js"></script>
 </body>
 
 </html>
