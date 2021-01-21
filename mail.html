@@ -8,19 +8,6 @@
     <script src="mail.js"></script>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="lib/font/fonts.css">
-</head>
-
-<body>
-    <img src="/lib/img/Fondo.jpg" class="back">
-    <div class="con">
-        <h1>ENVÍO</h1>
-        <h2>DE CORREO</h2>
-        <hr>
-        <h3 id="info">Enviando...</h3>
-
-    </div>
-
-
     <style>
         * {
             margin: 0;
@@ -74,24 +61,23 @@
             height: 0.4vw;
         }
     </style>
+</head>
+
+<body>
+    <img src="/lib/img/Fondo.jpg" class="back">
+    <div class="con">
+        <h1>ENVÍO</h1>
+        <h2>DE CORREO</h2>
+        <hr>
+        <h3 id="info">Enviando...</h3>
+
+    </div>
+
+
+ 
 
     <script>
-        $(() => {
-            var nowst = window.location.search;
-
-            if (nowst) {
-                nowst = atob(nowst.replace('?', ''))
-
-                if (nowst.includes('arbusta.net') || nowst.includes('test')) {
-
-                    fetch('https://script.google.com/a/macros/arbusta.net/s/AKfycbwVeOng24GwZZUuC_Ef6tPJ0HpHlBimimkOhisAxQXMpmVYDsE0Wu3kIg/exec?' + nowst, { cache: 'no-cache' }).then(Response => {
-                        Response.json().then(json => {console.log(nowst)})
-                    })
-                } else {
-                    window.close()
-                }
-            }
-        })
+       
     </script>
 </body>
 

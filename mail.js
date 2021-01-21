@@ -8,18 +8,18 @@ $(() => {
             //pedir datos y enviar mail
             fetch('https://script.google.com/a/macros/arbusta.net/s/AKfycbwVeOng24GwZZUuC_Ef6tPJ0HpHlBimimkOhisAxQXMpmVYDsE0Wu3kIg/exec?' + nowst, { cache: 'no-cache' }).then(Response => {
                 Response.json().then(json => {
-                    console.log(json)
+                    console.log((json.name.split(', ')[1].includes(' ')) ? json.name.split(', ')[1].split(' ')[0] : json.name.split(', ')[1])
                 })
             }).catch(err => {
                 console.log(err)
             })
 
         } else {
-           window.close()
+           //window.close()
         }
 
     } else {
-        window.close()
+        //window.close()
     }
 })
 
@@ -35,26 +35,3 @@ sendmail = (to, nam, toto) => {
     }).then(
         message => console.log(message), window.close())
 };
-
-getdata = () => {
-    fetch('https://script.google.com/a/macros/arbusta.net/s/AKfycbwVeOng24GwZZUuC_Ef6tPJ0HpHlBimimkOhisAxQXMpmVYDsE0Wu3kIg/exec?getmail', { cache: 'no-cache' }).then(Response => {
-        Response.json().then(inf => {
-            var todok = 0, cone = [];
-
-            for (let i = 0; i < inf.length; i++) {
-
-                if (inf[i].mail && inf[i].meses >= 6 && inf[i].talento) {
-                    todok++
-                    cone.push(inf[i])
-                }
-            }
-
-            window.sessionStorage.setItem('inf', JSON.stringify(cone));
-            //console.log(cone);
-            $('#info').html('Colaboradores seleccionados: ' + todok)
-            $('button').show()
-        })
-    }).catch(err => {
-        console.log(err)
-    })
-}

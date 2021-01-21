@@ -1,182 +1,3 @@
-<img src="/lib/img/2020_Arbusta_web.png" class="png1">
-<img src="/lib/img/Fondo.jpg" class="bacc">
-<h1 id="ti" style="text-align: center;margin-bottom: 8vw; font-size: 2.3vw;"></h1>
-
-<div class="conte">
-    <div id="desafios" class="secc">
-        <div class="tx iz">
-            <h1>DESAFÍOS</h1>
-            <hr>
-            <p>Todo cambio -sea asumir un nuevo rol, pasar a una nueva tribu o a un nuevo círculo, o pasar de PT a FT,
-                promocionar, o tomar una nueva responsabilidad- implica salirse de la zona de confort, animarse a
-                crecer, a expandirse, a dar un paso más hacia nuevas experiencias y construir nuevas miradas, ganar
-                nuevas habilidades técnicas e interpersonales, tomar coraje para confiar y desafiarse.</p>
-        </div>
-        <div class="res der">
-            <div id="Full"></div>
-            <div id="puesto"></div>
-            <div id="proya"></div>
-            <div id="proyb">
-                <ul> </ul>
-            </div>
-        </div>
-    </div>
-
-    <div id="espacios" class="secc">
-        <div class="res iz">
-            <h1>Participaste en <span class="resa" id="espanum"></span></h1>
-            <h2></h2>
-            <div id="espal">
-                <ul></ul>
-            </div>
-        </div>
-        <div class="tx iz">
-            <h1>Espacios de Aprendizaje</h1>
-            <hr>
-            <p>Más allá del aprendizaje que se construye en el desarrollo de las tareas, Arbusta -como un Entorno de
-                Aprendizaje- pone a disposición diferentes espacios para el despliegue de nuevas habilidades técnicas y
-                socioemocionales. Iniciativas que responden a las necesidades del crecimiento de Arbusta como empresa,
-                de sus proyectos, de su negocio, del desarrollo de su equipo y su talento. Algunos de los ejemplos del
-                2020 son: inglés, portugués, Automation, Python, Ciberseguridad, Base de Datos y SQL, Selenium,
-                Inteligencia Emocional, Diseño, Liderazgo.
-                Esperamos que estés pudiendo aplicar las habilidades que adquiriste en tu trabajo.</p>
-        </div>
-    </div>
-
-    <div id="iniciativa" class="secc">
-        <div class="tx iz">
-            <h1>Participación en Iniciativas
-            </h1>
-            <hr>
-            <p>"En Arbusta buscamos crecer siendo plenos/as, es decir expandiéndonos en nuestra dimensión personal,
-                emocional, profesional. Por eso, proponemos y habilitamos espacios que puedan contener y expandir
-                intereses diversos, hacer crecer nuestra mirada, desarrollar nuevas habilidades en nosotros/as. Algunos
-                ejemplos son: las Conversaciones que nos Conectan, las Conversaciones que nos Inspiran, el Guild de
-                Género, el Guild de Sustentabilidad, el Guild de Motivación, Las Pausas Activas, los Grupos
-                Psicosociales.</p>
-        </div>
-        <div class="res der">
-            <div id="inia"></div>
-            <h2></h2>
-            <div id="inib">
-                <ul>
-                </ul>
-            </div>
-        </div>
-    </div>
-
-    <div id="formacion" class="secc">
-        <div class="res iz">
-            <h2>FORTALECISTE</h2>
-            <div id="fora">TU FORMACIÓN TÉCNICA EN: <br>
-                <span class="resa big">XX</span>
-            </div>
-            <h2></h2>
-
-            <div id="forb">
-                <ul>
-                </ul>
-            </div>
-        </div>
-        <div class="tx iz">
-            <h1 style="font-size: 2.6vw;">Formación más allá de Arbusta</h1>
-            <hr>
-            <p>Para develar talento, la mentalidad de crecimiento es clave. Y
-                sabemos que el/la protagonista de tu crecimiento sos vos. Arbusta
-                actúa como una plataforma de estímulo para eso. Todos los
-                conocimientos son valiosísimos para tu desarrollo, y también para tu
-                rol en Arbusta.</p>
-        </div>
-    </div>
-
-    <div id="adc" class="secc">
-        <div class="tx cen">
-            <h2>Desempeño en el cumplimiento objetivos del AD y/o de competencias Arbusta</h2>
-            <hr>
-            <p>Te felicitamos por los resultados de tu Análisis de Desempeño. El AD es una instancia formal en la que tu
-                referente, junto a vos, acuerda cómo y cuánto creciste en tus habilidades y en el cumplimiento de tus
-                objetivos.</p>
-        </div>
-    </div>
-
-    <div id="clave" class="secc">
-        <div class="claveu">
-            <span class="resa gold">GRACIAS POR SER UNA PERSONA CLAVE</span><br>
-            EN EL GROW DE OTRAS PERSONAS EN ARBUSTA
-        </div>
-        <p id="clavetext"></p>
-        <img src="/lib/img/Arbusta-blanco-11.png">
-    </div>
-</div>
-
-
-
-<script>
-    $(() => {
-        info = JSON.parse(window.sessionStorage.getItem('info'));
-        console.log(info)
-        $('#ti').html((info.name.split(', ')[1].includes(' ')) ? info.name.split(', ')[1].split(' ')[0] : info.name.split(', ')[1])
-
-        if (info.proyectos || info.puesto) {
-            $('#desafios').show()
-            if (info.puesto) {
-                $('#puesto').html('Cambiaste de puesto a <span class="resa"> ' + info.puesto + '.</span>')
-            }
-            if(info.paseft == 'Si'){
-                $('#Full').html('Pasaste a <span class="resa">Full Time!</span>')
-            }
-            if (info.proyectos) {
-                proynum = (info.proyectos.includes(", ")) ? info.proyectos.split(", ").length + " </span>proyectos:" : 1 + " </span>proyecto:";
-                $('#proya').html('Participaste en <span class="resa"> ' + proynum)
-
-                for (let i = 0; i < info.proyectos.split(", ").length; i++) {
-                    $('#proyb ul').append('<li><span class="resa">> </span>' + info.proyectos.split(", ")[i] + '</li>')
-                }
-
-            }
-        }
-        if (info.espaciosa) {
-            $('#espacios').show()
-            $('#espanum').html(info.espaciosa.split(", ").length)
-            $('#espacios h2').html((info.espaciosa.includes(", ")) ? 'ESPACIOS DE APRENDIZAJE' : 'ESPACIO DE APRENDIZAJE')
-            for (let i = 0; i < info.espaciosa.split(", ").length; i++) {
-                $('#espal ul').append('<li><span class="resa">> </span>' + info.espaciosa.split(", ")[i] + '</li>')
-            }
-        }
-
-        if (info.iniciativas) {
-            $('#iniciativa').show()
-            $('#inia').html('Celebramos tu<br> participación en: <br><span class="resa big">' + info.iniciativas.split(", ").length + '</span>')
-            $('#iniciativa h2').html((info.iniciativas.includes(", ")) ? 'INICIATIVAS' : 'INICIATIVA')
-            for (let i = 0; i < info.iniciativas.split(", ").length; i++) {
-                $('#inib ul').append('<li><span class="resa">> </span>' + info.iniciativas.split(", ")[i] + '</li>')
-            }
-        }
-
-        if (info.formacion) {
-            $('#formacion').show()
-            $('#fora .resa').html(info.formacion.split(", ").length)
-            $('#formacion h2').last().html((info.formacion.includes(", ")) ? 'LUGARES' : 'LUGAR')
-            for (let i = 0; i < info.formacion.split(", ").length; i++) {
-                $('#forb ul').append('<li><span class="resa">> </span>' + info.formacion.split(", ")[i] + '</li>')
-            }
-        }
-
-        if (info.competencias == 'Si' || info.objetivos == 'Si') {
-            $('#adc').show()
-        }
-
-        if (info.clave) {
-            $('#clave').show()
-            $('#clavetext').html('" ' + info.clave + ' "')
-        } else {
-            $('.claveu').hide()
-            $('#clavetext').hide()
-            $('#clave').show()
-        }
-    }) 
-</script>
-
 <style>
     * {
         margin: 0;
@@ -360,5 +181,186 @@
         }
     }
 </style>
+
+<img src="/lib/img/2020_Arbusta_web.png" class="png1">
+<img src="/lib/img/Fondo.jpg" class="bacc">
+<h1 id="ti" style="text-align: center;margin-bottom: 8vw; font-size: 2.3vw;"></h1>
+
+<div class="conte">
+    <div id="desafios" class="secc">
+        <div class="tx iz">
+            <h1>DESAFÍOS</h1>
+            <hr>
+            <p>Todo cambio -sea asumir un nuevo rol, pasar a una nueva tribu o a un nuevo círculo, o pasar de PT a FT,
+                promocionar, o tomar una nueva responsabilidad- implica salirse de la zona de confort, animarse a
+                crecer, a expandirse, a dar un paso más hacia nuevas experiencias y construir nuevas miradas, ganar
+                nuevas habilidades técnicas e interpersonales, tomar coraje para confiar y desafiarse.</p>
+        </div>
+        <div class="res der">
+            <div id="Full"></div>
+            <div id="puesto"></div>
+            <div id="proya"></div>
+            <div id="proyb">
+                <ul> </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="espacios" class="secc">
+        <div class="res iz">
+            <h1>Participaste en <span class="resa" id="espanum"></span></h1>
+            <h2></h2>
+            <div id="espal">
+                <ul></ul>
+            </div>
+        </div>
+        <div class="tx iz">
+            <h1>Espacios de Aprendizaje</h1>
+            <hr>
+            <p>Más allá del aprendizaje que se construye en el desarrollo de las tareas, Arbusta -como un Entorno de
+                Aprendizaje- pone a disposición diferentes espacios para el despliegue de nuevas habilidades técnicas y
+                socioemocionales. Iniciativas que responden a las necesidades del crecimiento de Arbusta como empresa,
+                de sus proyectos, de su negocio, del desarrollo de su equipo y su talento. Algunos de los ejemplos del
+                2020 son: inglés, portugués, Automation, Python, Ciberseguridad, Base de Datos y SQL, Selenium,
+                Inteligencia Emocional, Diseño, Liderazgo.
+                Esperamos que estés pudiendo aplicar las habilidades que adquiriste en tu trabajo.</p>
+        </div>
+    </div>
+
+    <div id="iniciativa" class="secc">
+        <div class="tx iz">
+            <h1>Participación en Iniciativas
+            </h1>
+            <hr>
+            <p>"En Arbusta buscamos crecer siendo plenos/as, es decir expandiéndonos en nuestra dimensión personal,
+                emocional, profesional. Por eso, proponemos y habilitamos espacios que puedan contener y expandir
+                intereses diversos, hacer crecer nuestra mirada, desarrollar nuevas habilidades en nosotros/as. Algunos
+                ejemplos son: las Conversaciones que nos Conectan, las Conversaciones que nos Inspiran, el Guild de
+                Género, el Guild de Sustentabilidad, el Guild de Motivación, Las Pausas Activas, los Grupos
+                Psicosociales.</p>
+        </div>
+        <div class="res der">
+            <div id="inia"></div>
+            <h2></h2>
+            <div id="inib">
+                <ul>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="formacion" class="secc">
+        <div class="res iz">
+            <h2>FORTALECISTE</h2>
+            <div id="fora">TU FORMACIÓN TÉCNICA EN: <br>
+                <span class="resa big">XX</span>
+            </div>
+            <h2></h2>
+
+            <div id="forb">
+                <ul>
+                </ul>
+            </div>
+        </div>
+        <div class="tx iz">
+            <h1 style="font-size: 2.6vw;">Formación más allá de Arbusta</h1>
+            <hr>
+            <p>Para develar talento, la mentalidad de crecimiento es clave. Y
+                sabemos que el/la protagonista de tu crecimiento sos vos. Arbusta
+                actúa como una plataforma de estímulo para eso. Todos los
+                conocimientos son valiosísimos para tu desarrollo, y también para tu
+                rol en Arbusta.</p>
+        </div>
+    </div>
+
+    <div id="adc" class="secc">
+        <div class="tx cen">
+            <h2>Desempeño en el cumplimiento objetivos del AD y/o de competencias Arbusta</h2>
+            <hr>
+            <p>Te felicitamos por los resultados de tu Análisis de Desempeño. El AD es una instancia formal en la que tu
+                referente, junto a vos, acuerda cómo y cuánto creciste en tus habilidades y en el cumplimiento de tus
+                objetivos.</p>
+        </div>
+    </div>
+
+    <div id="clave" class="secc">
+        <div class="claveu">
+            <span class="resa gold">GRACIAS POR SER UNA PERSONA CLAVE</span><br>
+            EN EL GROW DE OTRAS PERSONAS EN ARBUSTA
+        </div>
+        <p id="clavetext"></p>
+        <img src="/lib/img/Arbusta-blanco-11.png">
+    </div>
+</div>
+
+
+
+<script>
+    $(() => {
+        info = JSON.parse(window.sessionStorage.getItem('info'));
+        console.log(info)
+        $('#ti').html((info.name.split(', ')[1].includes(' ')) ? info.name.split(', ')[1].split(' ')[0] : info.name.split(', ')[1])
+
+        if (info.proyectos || info.puesto) {
+            $('#desafios').show()
+            if (info.puesto) {
+                $('#puesto').html('Cambiaste de puesto a <span class="resa"> ' + info.puesto + '.</span>')
+            }
+            if(info.paseft == 'Si'){
+                $('#Full').html('Pasaste a <span class="resa">Full Time!</span>')
+            }
+            if (info.proyectos) {
+                proynum = (info.proyectos.includes(", ")) ? info.proyectos.split(", ").length + " </span>proyectos:" : 1 + " </span>proyecto:";
+                $('#proya').html('Participaste en <span class="resa"> ' + proynum)
+
+                for (let i = 0; i < info.proyectos.split(", ").length; i++) {
+                    $('#proyb ul').append('<li><span class="resa">> </span>' + info.proyectos.split(", ")[i] + '</li>')
+                }
+
+            }
+        }
+        if (info.espaciosa) {
+            $('#espacios').show()
+            $('#espanum').html(info.espaciosa.split(", ").length)
+            $('#espacios h2').html((info.espaciosa.includes(", ")) ? 'ESPACIOS DE APRENDIZAJE' : 'ESPACIO DE APRENDIZAJE')
+            for (let i = 0; i < info.espaciosa.split(", ").length; i++) {
+                $('#espal ul').append('<li><span class="resa">> </span>' + info.espaciosa.split(", ")[i] + '</li>')
+            }
+        }
+
+        if (info.iniciativas) {
+            $('#iniciativa').show()
+            $('#inia').html('Celebramos tu<br> participación en: <br><span class="resa big">' + info.iniciativas.split(", ").length + '</span>')
+            $('#iniciativa h2').html((info.iniciativas.includes(", ")) ? 'INICIATIVAS' : 'INICIATIVA')
+            for (let i = 0; i < info.iniciativas.split(", ").length; i++) {
+                $('#inib ul').append('<li><span class="resa">> </span>' + info.iniciativas.split(", ")[i] + '</li>')
+            }
+        }
+
+        if (info.formacion) {
+            $('#formacion').show()
+            $('#fora .resa').html(info.formacion.split(", ").length)
+            $('#formacion h2').last().html((info.formacion.includes(", ")) ? 'LUGARES' : 'LUGAR')
+            for (let i = 0; i < info.formacion.split(", ").length; i++) {
+                $('#forb ul').append('<li><span class="resa">> </span>' + info.formacion.split(", ")[i] + '</li>')
+            }
+        }
+
+        if (info.competencias == 'Si' || info.objetivos == 'Si') {
+            $('#adc').show()
+        }
+
+        if (info.clave) {
+            $('#clave').show()
+            $('#clavetext').html('" ' + info.clave + ' "')
+        } else {
+            $('.claveu').hide()
+            $('#clavetext').hide()
+            $('#clave').show()
+        }
+    }) 
+</script>
+
+
 
 <!-- ?dGVzdA== -->
