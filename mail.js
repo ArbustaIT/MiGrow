@@ -10,8 +10,10 @@ $(() => {
                 Response.json().then(json => {
                     sendmail(nowst, (json.name.split(', ')[1].includes(' ')) ? json.name.split(', ')[1].split(' ')[0] : json.name.split(', ')[1], nowst)
                 })
+                $('#info').html('Enviando...')
             }).catch(err => {
                 console.log(err)
+                $('#info').html('Error :(')
             })
 
         } else {
