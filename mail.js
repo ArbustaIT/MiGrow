@@ -25,10 +25,6 @@ $(() => {
     }
 })
 
-for (let energy = 0; energy; energy++) {
-  console.log('La energia actual es: ' + energy)    
-}
-
 sendmail = (to, nam, toto) => {
     Email.send({
         SecureToken: "ec551810-4c3a-4472-bbba-37e8ba7098ff",
