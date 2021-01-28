@@ -124,7 +124,9 @@
         margin-top: 3.5vw;
     }
 
-    #puesto, #proya, #Full {
+    #puesto,
+    #proya,
+    #Full {
         font-size: 2vw;
 
     }
@@ -137,9 +139,14 @@
         font-size: 2vw;
     }
 
-    #fora{
+    #fora {
         font-size: 2vw;
         font-family: 'rLightItalic';
+    }
+
+    .claveu {
+        color: white;
+        font-size: 2vw;
     }
 
     #clave {
@@ -207,13 +214,13 @@
         <div class="tx iz">
             <h1>Espacios de Aprendizaje</h1>
             <hr>
-            <p>Más allá del aprendizaje que se construye en el desarrollo de las tareas, Arbusta -como un Entorno de
-                Aprendizaje- pone a disposición diferentes espacios para el despliegue de nuevas habilidades técnicas y
-                socioemocionales. Iniciativas que responden a las necesidades del crecimiento de Arbusta como empresa,
-                de sus proyectos, de su negocio, del desarrollo de su equipo y su talento. Algunos de los ejemplos del
-                2020 son: inglés, portugués, Automation, Python, Ciberseguridad, Base de Datos y SQL, Selenium,
-                Inteligencia Emocional, Diseño, Liderazgo.
-                Esperamos que estés pudiendo aplicar las habilidades que adquiriste en tu trabajo.</p>
+            <p>Más allá del aprendizaje en el desarrollo de las tareas de cada persona, Arbusta, como un Entorno de
+                Aprendizaje, pone a disposición diferentes espacios para el desarrollo de nuevas habilidades técnicas y
+                socioemocionales. Estas responden a las necesidades del crecimiento de Arbusta como empresa, sus
+                proyectos, su negocio, el desarrollo de su equipo y su talento. Algunos de los ejemplos del 2020 son
+                inglés, portugués, Automation, Python, Ciberseguridad, Base de Datos y SQL, Selenium, Inteligencia
+                Emocional, Diseño, Liderazgo. <br>
+                ¡Esperamos que estés pudiendo aplicar las habilidades que adquiriste en tu trabajo! </p>
         </div>
     </div>
 
@@ -222,12 +229,12 @@
             <h1>Participación en Iniciativas
             </h1>
             <hr>
-            <p>"En Arbusta buscamos crecer siendo plenos/as, es decir expandiéndonos en nuestra dimensión personal,
-                emocional, profesional. Por eso, proponemos y habilitamos espacios que puedan contener y expandir
-                intereses diversos, hacer crecer nuestra mirada, desarrollar nuevas habilidades en nosotros/as. Algunos
-                ejemplos son: las Conversaciones que nos Conectan, las Conversaciones que nos Inspiran, el Guild de
-                Género, el Guild de Sustentabilidad, el Guild de Motivación, Las Pausas Activas, los Grupos
-                Psicosociales.</p>
+            <p>En Arbusta buscamos crecer siendo plenos/as, es decir expandiéndonos en nuestra dimensión personal,
+                emocional, profesional. Por eso, habilitamos espacios que puedan contener e impulsar intereses diversos,
+                ampliar nuestra mirada, desarrollar nuevas habilidades en nosotros/as. Algunos ejemplos son las
+                Conversaciones que nos Conectan, las Conversaciones que nos Inspiran, el Guild de Género, el Guild de
+                Sustentabilidad, el Guild de Motivación, Las Pausas Activas, los Grupos Psicosociales)
+            </p>
         </div>
         <div class="res der">
             <div id="inia"></div>
@@ -255,11 +262,9 @@
         <div class="tx iz">
             <h1 style="font-size: 2.6vw;">Formación más allá de Arbusta</h1>
             <hr>
-            <p>Para develar talento, la mentalidad de crecimiento es clave. Y
-                sabemos que el/la protagonista de tu crecimiento sos vos. Arbusta
-                actúa como una plataforma de estímulo para eso. Todos los
-                conocimientos son valiosísimos para tu desarrollo, y también para tu
-                rol en Arbusta.</p>
+            <p>Para develar talento, la mentalidad de crecimiento es clave. Y sabemos que el/la protagonista de tu
+                crecimiento sos vos. Arbusta actúa como una plataforma de estímulo para eso. Todos los conocimientos son
+                valiosísimos para tu desarrollo, y también para tu rol en Arbusta.</p>
         </div>
     </div>
 
@@ -268,12 +273,23 @@
             <h2>Desempeño en el cumplimiento objetivos del AD y/o de competencias Arbusta</h2>
             <hr>
             <p>Te felicitamos por los resultados de tu Análisis de Desempeño. El AD es una instancia formal en la que tu
-                referente, junto a vos, acuerda cómo y cuánto creciste en tus habilidades y en el cumplimiento de tus
-                objetivos.</p>
+                referente, junto a vos, acordó cómo y cuánto creciste en tus habilidades y en el cumplimiento de tus
+                objetivos.
+            </p>
         </div>
     </div>
-
+    <div class="secc" style="display: block !important;">
+        <div class="tx cen">
+            <p>Cualquier reflexión y/o información que te parezca relevante modificar o agregar respecto de los datos
+                compartidos, es muy bienvenida en este <a target="_blank"
+                    href="https://docs.google.com/forms/d/e/1FAIpQLSevSiCcHOIckm0SfmL7V7auFcx_1eVj5Of2vdoAPSv00vq4_Q/viewform">formulario</a>.
+            </p>
+        </div>
+    </div>
     <div id="clave" class="secc">
+        <div class="claveu">
+            <span class="resa gold"> ¡Gracias por ser parte del GROW de Arbusta!</span><br><br>
+        </div>
         <img src="/lib/img/Arbusta-blanco-11.png">
     </div>
 </div>
@@ -291,7 +307,7 @@
             if (info.puesto) {
                 $('#puesto').html('Cambiaste de puesto a <span class="resa"> ' + info.puesto + '.</span>')
             }
-            if(info.paseft == 'Si'){
+            if (info.paseft == 'Si') {
                 $('#Full').html('Pasaste a <span class="resa">Full Time!</span>')
             }
             if (info.proyectos) {
@@ -336,7 +352,7 @@
         }
 
         $('#clave').show()
-       
+
     }) 
 </script>
 
